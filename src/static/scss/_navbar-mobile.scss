@@ -1,0 +1,244 @@
+@import "responsive";
+
+.nav-container {
+  display: none;
+  @include Responsive(XS) {
+    display: block;
+  }
+
+  @include Responsive(SM) {
+    display: block;
+  }
+
+  .show-nav-header {
+    box-shadow: none !important;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .nav-header {
+    height: 60px;
+    width: 100%;
+    background: #fff;
+    position: fixed;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+    transition: 0.6s;
+
+    .nav-avatar {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 1px solid #0000ff;
+      position: relative;
+      cursor: pointer;
+
+      &::after {
+        content: "";
+        box-sizing: border-box;
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        background: green;
+        right: 0;
+        bottom: 0;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+    .nav-title {
+      text-align: center;
+      p {
+        margin: 0;
+        font-weight: 600;
+      }
+
+      .slide-text {
+        position: relative;
+        color: blue;
+
+        .slide {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-color: #fff;
+          left: 0;
+          border-left: 1px solid $mainColor;
+          animation: showSkill 2s infinite alternate-reverse;
+          z-index: 4;
+        }
+      }
+    }
+
+    .nav-btn {
+      cursor: pointer;
+
+      &:hover {
+        i {
+          color: red !important;
+        }
+      }
+
+      i {
+        font-size: 25px;
+        color: #0000ff;
+        transition: 1s;
+      }
+    }
+
+    .active-btn {
+      transform: rotateZ(360deg);
+      color: #d42743 !important;
+    }
+  }
+
+  .list-profile {
+    position: fixed;
+    z-index: 4;
+    background: #ffffffe6;
+    top: -100%;
+    width: 100%;
+    height: fit-content;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.6s;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+
+    @include Responsive(SM) {
+      width: 40%;
+      height: 100vh;
+      top: 0;
+      right: -100%;
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: space-between;
+    }
+
+    a {
+      text-decoration: none;
+      color: #000;
+      font-weight: 600;
+    }
+
+    .lists-menu {
+      list-style-type: none;
+      padding-left: 0;
+      text-align: center;
+      padding: 0 16px;
+
+      @include Responsive(SM) {
+        text-align: start;
+      }
+
+      .item {
+        padding: 20px;
+        border-bottom: 1px solid #ccc;
+
+        i {
+          margin-right: 10px;
+          color: #000;
+        }
+
+        a {
+          text-decoration: none;
+          color: #000;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .link-git {
+    text-align: center;
+    margin-top: 35px;
+
+    @include Responsive(SM) {
+      margin: 50px 0;
+    }
+
+    .btn {
+      text-decoration: none;
+      border-radius: 6px;
+      padding: 10px 25px;
+      margin: 0 5px;
+
+      i {
+        margin-right: 5px;
+      }
+    }
+
+    .github {
+      background: #000;
+      color: #fff;
+    }
+
+    .gitlab {
+      background: rgb(250, 190, 11);
+      color: #000;
+      font-weight: 600;
+    }
+
+    h6 {
+      margin: 20px 0;
+    }
+  }
+
+  .showNav {
+    top: 50px;
+    opacity: 1;
+
+    @include Responsive(SM) {
+      right: 0;
+    }
+  }
+
+  .nav-header-dark {
+    background: #000 !important;
+    color: #ccc !important;
+    box-shadow: 0 3px 6px rgba(193, 192, 192, 0.16),
+      0 3px 6px rgba(179, 177, 177, 0.498);
+
+    .slide-dark {
+      background-color: #000 !important;
+      border-left: 1px solid #cc0000 !important;
+    }
+
+    .slide-text-dark {
+      color: #cc0000 !important;
+    }
+
+    .icon-dark {
+      color: #fff !important;
+    }
+  }
+
+  .list-profile-dark {
+    background: rgba(0, 0, 0, 0.7) !important;
+    color: #fff !important;
+
+    .link-dark {
+      color: #fff !important;
+    }
+  }
+
+  .github-dark {
+    border: 1px solid #fff;
+  }
+}
+
+@keyframes runText {
+  100% {
+    left: 105px;
+    width: 50%;
+    text-align: center;
+  }
+}

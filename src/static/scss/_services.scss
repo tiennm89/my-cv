@@ -1,0 +1,117 @@
+.wapper-service {
+  position: relative;
+  background-image: url(../../static/image/services.png);
+  background-attachment: fixed;
+  background-size: cover;
+
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 100px;
+
+    @include Responsive(XS) {
+      margin-top: 50px;
+    }
+
+    @include Responsive(SM) {
+      margin-top: 50px;
+    }
+
+    .services-heading {
+      text-align: center;
+      margin-bottom: 65px;
+
+      @include Responsive(XS) {
+        margin-bottom: 40px;
+      }
+
+      @include Responsive(SM) {
+        margin-bottom: 40px;
+      }
+
+      h2 {
+        margin: 0;
+        font-weight: 800;
+        font-size: 38px;
+        margin-bottom: 10px;
+
+        @include Responsive(XS) {
+          margin: 0 16px;
+        }
+      }
+
+      p {
+        padding: 0 16px;
+      }
+      
+    }
+
+    .services-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+
+      @include Responsive(XS) {
+        display: block;
+      }
+
+      @include Responsive(SM) {
+        margin: 0 16px;
+      }
+
+      .single-service {
+        padding: 32px 38px;
+        background-color: #fff;
+        margin-bottom: 35px;
+        text-align: center;
+        border-radius: 6px;
+        width: 25%;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
+        &:hover {
+          i {
+            transform: rotateY(180deg);
+          }
+        }
+
+        @include Responsive(XS) {
+          width: inherit;
+          margin: 16px;
+        }
+
+        @include Responsive(SM) {
+          margin: 10px;
+          flex-grow: 1;
+        }
+
+        i {
+          font-size: 40px;
+          color: #3e43e9;
+          transition: transform 1s;
+        }
+
+        .service-title {
+          font-weight: 700;
+          color: #333;
+          font-size: 18px;
+          margin: 13px 0;
+        }
+
+        .service-description {
+          line-height: 2;
+        }
+      }
+
+      .single-service-dark {
+        background: #555;
+
+        .icon-dark {
+          color: #cc0000;
+        }
+        .service-title-dark {
+          color: #fff !important;
+        }
+      }
+    }
+  }
+}
